@@ -9,5 +9,3 @@ Sync RootBox Sources
 
     repo init -u https://github.com/harlanjim/platform_manifest.git -b jb-mr1
     repo sync
-
-TEST
