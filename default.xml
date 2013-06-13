@@ -45,16 +45,17 @@
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="rootbox" name="buildscripts" remote="rootbox" revision="jb-mr1" >
-    <copyfile src="build_release.sh" dest="build_release.sh" />
-    <copyfile src="server1.sh" dest="build_server1.sh" />
-    <copyfile src="server2.sh" dest="build_server2.sh" />
+    <copyfile src="build_release1.sh" dest="build_release1.sh" />
+    <copyfile src="build_release2.sh" dest="build_release2.sh" />
+    <copyfile src="server1.sh" dest="server1.sh" />
+    <copyfile src="server2.sh" dest="server2.sh" />
     <copyfile src="build_rootbox.sh" dest="build_rootbox.sh" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
   <project path="bionic" name="android_bionic" remote="rootbox" revision="jb-mr1" />
   <project path="bootable/diskinstaller" name="android_bootable_diskinstaller" remote="cm" revision="cm-10.1" />
   <project path="bootable/recovery" name="android_bootable_recovery" remote="cm" revision="cm-10.1" />
-  <project path="cts" name="platform/cts" />
+  <project path="cts" name="platform/cts" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="dalvik" name="dalvik" remote="rootbox" revision="jb-mr1" />
   <project path="development" name="UnicornButter/development" remote="gh" revision="jb-mr1" />
   <project path="device/asus/grouper" name="device_asus_grouper" remote="rootbox" revision="jb-mr1" />
@@ -74,6 +75,7 @@
   <project path="device/samsung/d2att" name="device_samsung_d2att" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/d2spr" name="android_device_samsung_d2spr" remote="cm" revision="cm-10.1" />
   <project path="device/samsung/d2tmo" name="device_samsung_d2tmo" remote="rootbox" revision="jb-mr1" />
+  <project path="device/samsung/d2usc" name="device_samsung_d2usc" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/d2vzw" name="device_samsung_d2vzw" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/galaxys2-common" name="device_samsung_galaxys2-common" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/i605" name="android_device_samsung_i605" remote="cm" revision="cm-10.1" />
@@ -98,7 +100,6 @@
   <project path="device/samsung/tuna" name="device_samsung_tuna" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/toro" name="device_samsung_toro" remote="aokp" revision="jb-mr1" />
   <project path="device/samsung/t0lteatt" name="android_device_samsung_t0lteatt" remote="cm" revision="cm-10.1" />
-  <project path="device/samsung/t0ltecdma" name="device_samsung_t0ltecdma" remote="rootbox" revision="jb-mr1" />
   <project path="device/samsung/t0lte" name="device_samsung_t0lte" remote="rootbox" revision="jb-mr1" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
   <project path="external/aac" name="platform/external/aac" />
@@ -291,7 +292,7 @@
   <project path="frameworks/support" name="platform/frameworks/support" />
   <project path="frameworks/testing" name="platform/frameworks/testing" />
   <project path="frameworks/wilhelm" name="UnicornButter/frameworks_wilhelm" remote="gh" revision="jb-mr1" />
-  <project path="gdk" name="platform/gdk" />
+  <project path="gdk" name="platform/gdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="hardware/broadcom/wlan" name="android_hardware_broadcom_wlan" remote="cm" revision="cm-10.1" />
   <project path="hardware/invensense" name="platform/hardware/invensense" />
   <project path="hardware/libhardware" name="android_hardware_libhardware" remote="cm" revision="cm-10.1" />
@@ -330,7 +331,7 @@
   <project path="kernel/samsung/tuna" name="android_kernel_samsung_tuna" remote="cm" revision="cm-10.1" />
   <project path="libcore" name="UnicornButter/libcore" remote="gh" revision="jb-mr1" />
   <project path="libnativehelper" name="platform/libnativehelper" />
-  <project path="ndk" name="platform/ndk" />
+  <project path="ndk" name="platform/ndk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
   <project path="packages/apps/Bluetooth" name="android_packages_apps_Bluetooth"  remote="cm" revision="cm-10.1" />
   <project path="packages/apps/Browser" name="packages_apps_Browser" remote="rootbox" revision="jb-mr1" />
@@ -356,7 +357,7 @@
   <project path="packages/apps/Music" name="platform/packages/apps/Music" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
   <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="aokp" revision="jb-mr1" />
-  <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" remote="aokp" revision="jb-mr1" />
+  <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" remote="rootbox" revision="jb-mr1" />
   <project path="packages/apps/Phone" name="packages_apps_Phone" remote="rootbox" revision="jb-mr1" />
   <project path="packages/apps/PermissionsManager" name="packages_apps_PermissionsManager" remote="aokp" revision="jb-mr1" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
@@ -398,13 +399,14 @@
   <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" />
   <project path="packages/wallpapers/NoiseField" name="platform/packages/wallpapers/NoiseField" />
   <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
-  <project path="pdk" name="platform/pdk" />
+  <project path="packages/wallpapers/RootBox" name="RootBox_wallpapers" remote="rootbox" revision="jb-mr1" />
+  <project path="pdk" name="platform/pdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="prebuilt" name="android_prebuilt" remote="cm" revision="cm-10.1" />
   <project path="prebuilts/clang/darwin-x86/3.1" name="platform/prebuilts/clang/darwin-x86/3.1" groups="darwin" />
   <project path="prebuilts/clang/darwin-x86/3.2" name="platform/prebuilts/clang/darwin-x86/3.2" groups="darwin" />
   <project path="prebuilts/clang/linux-x86/3.1" name="platform/prebuilts/clang/linux-x86/3.1" groups="linux" />
   <project path="prebuilts/clang/linux-x86/3.2" name="platform/prebuilts/clang/linux-x86/3.2" groups="linux" />
-  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" />
+  <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" groups="notdefault,eclipse" />
   <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" groups="notdefault,eclipse" />
   <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" groups="darwin,arm" />
@@ -422,11 +424,11 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" groups="linux" />
   <project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" groups="linux,mips" />
   <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" groups="linux,x86" />
-  <project path="prebuilts/misc" name="prebuilts_misc" remote="aokp" revision="jb-mr1" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" />
-  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <project path="sdk" name="android_sdk" remote="cm" revision="cm-10.1" />
   <project path="system/bluetooth" name="android_system_bluetooth" remote="cm" revision="cm-10.1" />
   <project path="system/core" name="android_system_core" remote="rootbox" revision="jb-mr1" />
@@ -435,21 +437,17 @@
   <project path="system/netd" name="android_system_netd" remote="cm" revision="cm-10.1" />
   <project path="system/security" name="UnicornButter/system_security" remote="gh" revision="jb-mr1" />
   <project path="system/vold" name="system_vold" remote="aokp" revision="jb-mr1" />
-  <project path="tools/build" name="platform/tools/build" groups="toolsbuild" />
-  <project path="tools/motodev" name="platform/tools/motodev" />
+  <project path="tools/build" name="platform/tools/build" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <project path="tools/motodev" name="platform/tools/motodev" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
 
   <project path="vendor/rootbox" name="vendor_rootbox" remote="rootbox" revision="jb-mr1" />
   <project path="vendor/asus" name="vendor_asus" remote="rootbox" revision="jb-mr1" />
   <project path="vendor/lge" name="vendor_lge" remote="aokp" revision="jb-mr1" />
   <project path="vendor/oppo" name="TheMuppets/proprietary_vendor_oppo" remote="gh" revision="cm-10.1" />
   <project path="vendor/samsung" name="vendor_samsung" remote="rootbox" revision="jb-mr1" />
-
   <project path="vendor/tmobile/apps/ThemeChooser" name="themes-platform-vendor-tmobile-apps-ThemeChooser" remote="aokp" revision="jb-mr1" />
   <project path="vendor/tmobile/libs/com.tmobile.themes" name="vendor_tmobile_libs_com.tmobile.themes" remote="aokp" revision="jb-mr1" />
   <project path="vendor/tmobile/providers/ThemeManager" name="vendor_tmobile_providers_ThemeManager" remote="aokp" revision="jb-mr1" />
   <project path="vendor/tmobile/products/themes" name="android_vendor_tmobile_products_themes" remote="cm" revision="cm-10.1" />
-
-  <project path="packages/wallpapers/RootBox" name="RootBox_wallpapers" remote="rootbox" revision="jb-mr1" />
-
   <project path="platform_manifest" name="platform_manifest" remote="rootbox" revision="jb-mr1" />
 </manifest>
